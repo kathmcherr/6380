@@ -12,7 +12,7 @@ framework: io2012
 widgets: mathjax
 github:
   user: kathmcherr
-  repo: PSYC-6380-Group-Project
+  repo: TESTING
 ---
 
 <style>
