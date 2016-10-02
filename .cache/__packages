@@ -1,0 +1,12 @@
+base
+lavaan
+qgraph
+semPlot
+papaja
+psych
+apaTables
+dplyr
+MBESS
+devtools
+ggplot2
+knitr

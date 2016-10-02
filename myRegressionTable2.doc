@@ -1,0 +1,209 @@
+{\rtf1\ansi\deff0 {\fonttbl {\f0 Times New Roman;}}
+{\pard Table XX \par}
+{\pard  \par}
+{\pard\i Regression results using SelfRegulation as the criterion
+\par}
+{\pard  \par}
+{
+\trowd \trgaph100
+\clbrdrt\brdrw15\brdrs
+\clvertalc\cellx1440 
+\clbrdrt\brdrw15\brdrs
+\clvertalc\cellx2844 
+\clbrdrt\brdrw15\brdrs
+\clvertalc\cellx3780 
+\clbrdrt\brdrw15\brdrs
+\clvertalc\cellx4716 
+\clbrdrt\brdrw15\brdrs
+\clvertalc\cellx5652 
+\clbrdrt\brdrw15\brdrs
+\clvertalc\cellx6588 
+\clbrdrt\brdrw15\brdrs
+\clvertalc\cellx8748 
+\pard\sa0\sb0\intbl\qr{ }\cell
+\pard\sa0\sb0\intbl\qc{{\i b}}\cell
+\pard\sa0\sb0\intbl\qc{{\i SE}}\cell
+\pard\sa0\sb0\intbl\qc{{\i beta}}\cell
+\pard\sa0\sb0\intbl\qc{{\i sr\super 2 \nosupersub}}\cell
+\pard\sa0\sb0\intbl\qc{{\i r}}\cell
+\pard\sa0\sb0\intbl\qc{Fit}\cell
+\row
+}
+{
+\trowd \trgaph100
+\clbrdrt\brdrw15\brdrs
+\clvertalc\cellx1440 
+\clbrdrt\brdrw15\brdrs
+\clvertalc\cellx2844 
+\clbrdrt\brdrw15\brdrs
+\clvertalc\cellx3780 
+\clbrdrt\brdrw15\brdrs
+\clvertalc\cellx4716 
+\clbrdrt\brdrw15\brdrs
+\clvertalc\cellx5652 
+\clbrdrt\brdrw15\brdrs
+\clvertalc\cellx6588 
+\clbrdrt\brdrw15\brdrs
+\clvertalc\cellx8748 
+\pard\sa0\sb0\intbl\qr{Model 1}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx561{ }\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx140{ }\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx140{ }\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx140{ }\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx140{ }\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx324{ }\cell
+\row
+}
+{
+\trowd \trgaph100
+\clvertalc\cellx1440 
+\clvertalc\cellx2844 
+\clvertalc\cellx3780 
+\clvertalc\cellx4716 
+\clvertalc\cellx5652 
+\clvertalc\cellx6588 
+\clvertalc\cellx8748 
+\pard\sa0\sb0\intbl\qr{(Intercept)}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx561{-0.26}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx140{ 0.61}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx140{}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx140{}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx140{}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx324{ }\cell
+\row
+}
+{
+\trowd \trgaph100
+\clvertalc\cellx1440 
+\clvertalc\cellx2844 
+\clvertalc\cellx3780 
+\clvertalc\cellx4716 
+\clvertalc\cellx5652 
+\clvertalc\cellx6588 
+\clvertalc\cellx8748 
+\pard\sa0\sb0\intbl\qr{VCI}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx561{ 0.34*}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx140{ 0.15}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx140{0.27}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx140{.03}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx140{.67**}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx324{ }\cell
+\row
+}
+{
+\trowd \trgaph100
+\clvertalc\cellx1440 
+\clvertalc\cellx2844 
+\clvertalc\cellx3780 
+\clvertalc\cellx4716 
+\clvertalc\cellx5652 
+\clvertalc\cellx6588 
+\clvertalc\cellx8748 
+\pard\sa0\sb0\intbl\qr{VSI}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx561{ 0.08}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx140{ 0.09}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx140{0.10}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx140{.00}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx140{.61**}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx324{ }\cell
+\row
+}
+{
+\trowd \trgaph100
+\clvertalc\cellx1440 
+\clvertalc\cellx2844 
+\clvertalc\cellx3780 
+\clvertalc\cellx4716 
+\clvertalc\cellx5652 
+\clvertalc\cellx6588 
+\clvertalc\cellx8748 
+\pard\sa0\sb0\intbl\qr{WMI}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx561{ 0.02}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx140{ 0.11}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx140{0.02}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx140{.00}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx140{.53**}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx324{ }\cell
+\row
+}
+{
+\trowd \trgaph100
+\clvertalc\cellx1440 
+\clvertalc\cellx2844 
+\clvertalc\cellx3780 
+\clvertalc\cellx4716 
+\clvertalc\cellx5652 
+\clvertalc\cellx6588 
+\clvertalc\cellx8748 
+\pard\sa0\sb0\intbl\qr{PSI}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx561{ 0.46**}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx140{ 0.12}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx140{0.47}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx140{.08}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx140{.74**}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx324{ }\cell
+\row
+}
+{
+\trowd \trgaph100
+\clvertalc\cellx1440 
+\clvertalc\cellx2844 
+\clvertalc\cellx3780 
+\clvertalc\cellx4716 
+\clvertalc\cellx5652 
+\clvertalc\cellx6588 
+\clvertalc\cellx8748 
+\pard\sa0\sb0\intbl\qr{ }\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx561{ }\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx140{ }\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx140{ }\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx140{ }\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx140{ }\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx324{{\i R\super 2 \nosupersub} = .594}\cell
+\row
+}
+{
+\trowd \trgaph100
+\clvertalc\cellx1440 
+\clvertalc\cellx2844 
+\clvertalc\cellx3780 
+\clvertalc\cellx4716 
+\clvertalc\cellx5652 
+\clvertalc\cellx6588 
+\clvertalc\cellx8748 
+\pard\sa0\sb0\intbl\qr{ }\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx561{ }\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx140{ }\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx140{ }\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx140{ }\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx140{ }\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx324{{\i F}(4, 70) = 25.61}\cell
+\row
+}
+{
+\trowd \trgaph100
+\clbrdrb\brdrw15\brdrs
+\clvertalc\cellx1440 
+\clbrdrb\brdrw15\brdrs
+\clvertalc\cellx2844 
+\clbrdrb\brdrw15\brdrs
+\clvertalc\cellx3780 
+\clbrdrb\brdrw15\brdrs
+\clvertalc\cellx4716 
+\clbrdrb\brdrw15\brdrs
+\clvertalc\cellx5652 
+\clbrdrb\brdrw15\brdrs
+\clvertalc\cellx6588 
+\clbrdrb\brdrw15\brdrs
+\clvertalc\cellx8748 
+\pard\sa0\sb0\intbl\qr{ }\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx561{ }\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx140{ }\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx140{ }\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx140{ }\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx140{ }\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx324{ }\cell
+\row
+}
+{\pard \par}{\pard{\i Note.} * indicates {\i p} < .05; ** indicates {\i p} < .01. A significant {\i b}-weight indicates the beta-weight and semi-partial correlation are also significant. {\i b} represents unstandardized regression weights; {\i SE} represents the standard error of the unstandardized regression weights; {\i beta} indicates the beta-weights or standardized regression weights; {\i sr\super 2\nosupersub} represents the semi-partial correlation squared; {\i r} represents the zero-order correlation.\par}
+}

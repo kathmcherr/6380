@@ -1,0 +1,560 @@
+---
+title: "PSYC*6380 Group Presentation"
+author: "Lindsay Bryant, Katie Cherry, Kaytlin Constantin, & Sandy Erb"
+highlighter: highlight.js
+output: pdf_document
+incremental: yes
+job: null
+knit: slidify::knit2slides
+mode: selfcontained
+hitheme: school_book
+subtitle: Multiple Regression & Structural Equation Modeling
+framework: io2012
+widgets: mathjax
+github:
+  user: kathmcherr
+  repo: 6380
+---
+
+<style>
+em {
+  font-style: italic
+}
+</style>
+
+<style>
+strong {
+  font-weight: bold;
+}
+</style>
+
+## Today's Objectives
+
+>- Analytic problem
+>- Concept behind Multiple Regression (MR) & Structural Equation Modeling (SEM)
+>- Assumptions of MR & SEM
+>- MR & SEM in the R environment
+>- Advantages & disadvantages
+>- Reflections
+
+![](/Users/katiecherry/Dropbox/GROUP PROJECT PSYC*6380/KATIE'S FOLDER/Group Project/people.png)
+
+--- .class #id 
+
+## Analytic Problem
+
+*You're interested in the relations between a set of variables in some psychological system. For practical and/or ethical reasons, you're unable to experimentally manipulate these variables. You need to figure out a way to still describe the relations between these variables, and you recognize you will be limited from drawing causal inferrences from whatever technique you decide to use.*
+
+![](/Users/katiecherry/Dropbox/GROUP PROJECT PSYC*6380/KATIE'S FOLDER/Group Project/man-thinking.png)
+![](/Users/katiecherry/Dropbox/GROUP PROJECT PSYC*6380/KATIE'S FOLDER/Group Project/02.png)
+
+--- .class #id 
+
+## Conceptual Model: Multiple Regression
+
+>- $Y = a + b_1X_1 + b_2X_2 + b_3X_3 + {\epsilon}$
+
+>- MR examines **variations in Y**, attempting to **explain this variance** through **examining its relation** with a set of predetermined **predictor X variables**.
+  + i.e., *How much variance in Y is predicted by a set of X predictors all together?*
+>- **$R^2$**: The proportion of variance in the dependent variable accounted for by all the predictors together
+>- **Caution**: whenever you add a predictor, $R^2$ automatically increases
+  + Solution: Adjusted $R^2$ corrects for the number of predictor variables in the equation
+
+--- .class #id
+
+## MR: Selection Types
+
+>- 1. **Hierarchical**
+  + Predictors entered cumulatively
+  + Appropriate when: order driven by theory
+>- 2. **Forced entry**
+  + Predictors entered simultaneously
+  + Appropriate when: a) small # of predictors; b) "best" predictor unknown
+  + Each predictor assessed for unique variance
+>- 3. **Step-wise**
+  + Predictors added/removed to satisfy alpha level
+  + Relies on “significance testing” (**dun dun dun**)
+  + Used when: no hypotheses about predictors (i.e., exploratory stages)
+
+--- .class #id
+
+## Conceptual Model: Structural Equation Modeling
+
+>- Used to investigate theoretical constructs (i.e., latent variables) that are not observable and thus cannot be measured directly
+>- Combination of factor analysis and regression
+>- Often presented visually in a path diagram 
+
+>- ![](/Users/katiecherry/Dropbox/GROUP PROJECT PSYC*6380/KATIE'S FOLDER/Group Project/pathmodel.png)
+  + Hox & Bechger, 1998
+
+--- .class #id
+
+## Conceptual Model: SEM (con't)
+
+>- Appropriate to use when:
+  + A set of theoretical constructs (i.e., latent variables) are hypothesized to (1) correlate with each other; and (2) cause covariation among observed variables assumed to compose and represent proposed theoretical constructs  
+
+>- ![](/Users/katiecherry/Dropbox/GROUP PROJECT PSYC*6380/KATIE'S FOLDER/Group Project/pathmodel.png)
+  + Hox & Bechger, 1998
+
+--- .class #id
+
+## Assumptions of MR
+
+>- Continuous dependent variable
+>- Two or more independent variables (continuous [interval/ratio] or categorical [ordinal/nominal])
+>- Independence of observations (i.e., independence of residuals/errors): Durbin-Watson statistic
+>- Linear relationship between:
+  + Dependent variable and each of the independent variables
+  + Dependent and independent variables collectively
+  
+![](/Users/katiecherry/Dropbox/GROUP PROJECT PSYC*6380/KATIE'S FOLDER/Group Project/checklist.png)
+
+--- .class #id
+
+## Assumptions of MR (con't)
+
+>- Homoscedasticity of residuals (equal error variances)
+>- No multicollinearity
+>- No extreme outliers, high leverage points, or highly influential points
+>- Residuals (errors) should be normally distributed
+
+![](/Users/katiecherry/Dropbox/GROUP PROJECT PSYC*6380/KATIE'S FOLDER/Group Project/checklist.png)
+
+--- .class #id
+
+## Assumptions of SEM
+
+>- Temporal precedence
+>- Association or observed covariation between X and Y
+>- Isolation is present - no other reasonable explanation for this relationship - confounding variables controlled and relationship holds
+>- Data distribution meets assumptions of method used to estimate the relationship
+>- Correct specification of the direction of the causal relationship
+
+![](/Users/katiecherry/Dropbox/GROUP PROJECT PSYC*6380/KATIE'S FOLDER/Group Project/man-asking-to-other-about-an-educational-book.png)
+
+--- .class #id
+
+## Specifications of Exogeneity, Endogeneity, and Disturbances
+
+>- **Exogeneity**: unmeasured, unknown, and free to vary and covary
+>- **Endogeneity**: explicitly measured, not free to vary or covary
+>- **Disturbances**: set of unspecified causes of effect variable - similar to error or residual
+>- Assumption of independence of endogenous variables
+  + no common or ommitted causes: this assumption unrealistic and restrictive for behavioural sciences - thus all ommitted causes are unrelated to each other
+
+![](/Users/katiecherry/Dropbox/GROUP PROJECT PSYC*6380/KATIE'S FOLDER/Group Project/man-asking-to-other-about-an-educational-book.png)
+
+--- .class #id
+
+## Recursive and Non-Recursive Models
+
+>- Both assume that disturbances of endogenous variables unrelated to exogenous variables
+>- **Recursive**
+  + no feedback loops
+  + all causal effects assumed to be unidirectional
+  + Therefore, no endogenous variable a cause and effect of each other.
+>- **Non-Recursive**
+  + Have feedback loops or optional correlated errors
+  + Two special circumstances:
+   + 1. **Assumption of "equilibrium"** needed for reciprocal effects in a feedback loop where cross-sectional data is involved
+   + 2. **Assumption of "stationarity"** means that over time the basic causal relationship stays constant
+
+--- .class #id
+
+## Assumptions of Measurement Models
+
+>- 1. **Reflective Models**: most common type analyzed in SEM
+  + SEM analyzes continuous latent variables
+  + Factors and measurement errors uncorrelated
+  + Factors assumed to be continuous variables that are unidimensional
+  + Factors are normally distributed
+  + Independent error terms (omitted causes of different indicators) are uncorrelated - effect indicators are independent
+  + Assumption is relaxed with the ability to specify correlated measurement errors
+>- 2. **Formative Models:** used where composites are involved
+  + Direct effects go from indicator to composite; either a latent composite with an associated disturbance or to a composite with a total score that is not latent
+  + In order to identify a latent composite, it must have direct effects on at least two endogenous factors with effect indicators
+
+--- .class #id
+
+## Assumptions of Measurement Models (con't)
+
+>- 3. **MIMIC Models**: specify a factor with both cause and effect indicators
+  + Requires a strong theoretical rationale and theory regarding the direction of effect between indicators and latent variables
+
+--- .class #id
+
+## Data-Related Assumptions
+# Cardinal assumption: the model is **correctly specified**
+
+>- Observations independent; variables unstandardized
+>- No missing values
+>- Specific distribution assumptions target endogenous, *not* exogenous variables
+>- Normal univariate distributions of endogenous variables - implies they are continuous
+  + Robust ML estimation used with non-normal distribution
+  + Robust forms (e.g., weighted least squares regression) used with noncontinuous endogenous variables
+
+--- .class #id
+
+## Data-Related Assumptions (con't)
+
+>- Linear bivariate scatterplots
+>- Homoscedastic distribution of residual
+>- No measurement error in exogenous variables (unrealistic)
+>- Exogeneity Assumptions:
+  + Distribution of Endogenous and Exogenous continuous variables is  multivariate normal
+  + All biviariate relations  are linear
+  + Homoscedastic distributions of regression residuals
+
+--- .class #id
+
+## PHEW!
+
+![](/Users/katiecherry/Dropbox/GROUP PROJECT PSYC*6380/KATIE'S FOLDER/Group Project/exhausted-man.png)
+
+--- .class #id
+
+## MR in the R environment: Example 1
+
+- Example: examining the relation between rime awareness, phonological awareness, and verbal short-term memory as predictors of the WISC-V's Verbal Comprehension Index. 
+- Using a forced entry MR method (no predictions)
+- Need to combine these into a new variable
+
+```{r, eval=TRUE,echo=FALSE,message=FALSE,cache.comments=TRUE,}
+require(knitr)
+hook_source_def = knit_hooks$get('source')
+knit_hooks$set(source = function(x, options){
+  if (!is.null(options$verbatim) && options$verbatim){
+    opts = gsub(",\\s*verbatim\\s*=\\s*TRUE\\s*", "", options$params.src)
+    bef = sprintf('\n\n    ```{r %s}\n', opts, "\n")
+    stringr::str_c(bef, paste(knitr:::indent_block(x, "    "), collapse = '\n'), "\n    ```\n")
+  } else {
+     hook_source_def(x, options)
+  }
+})
+```
+
+```{r, eval=TRUE,echo=FALSE,message=FALSE,cache.comments=TRUE,}
+library(psych)
+library(apaTables)
+library(dplyr)
+library(MBESS)
+library(devtools)
+library(ggplot2)
+mydata = read.csv("My6380Data.csv")
+```
+
+```{r verbatimchunk, verbatim = TRUE}
+my.regression1 <- lm(VCI~RimeAwareness+PhonologicalAwareness+VerbalSTM, data=mydata)
+```
+
+--- .class #id
+
+## MR Example 1
+
+This output shows us how we combined rime awareness, phonological awareness and verbal short term memory and a constant to create $\hat{Y}$ (reported as the intercept in the output). Basically we are looking at how well, overall, can these three variables predict scores on the verbal comprehension index. 
+
+```{r verbatim = TRUE}
+print(my.regression1)
+```
+
+---.smallcode
+
+## MR Example 1 (con't)
+
+The $R^2$ value (ranges 0 to 1) indicates how well we predicted VCI based on our predictors. B-weights are presented under the Estimate columns. Here, $R^2$ = .16, indicating  16% of the variability in VCI scores can be explained by rime awareness, phonological awareness and verbal short term memory.
+
+```{r verbatim = TRUE}
+summary(my.regression1)
+```
+
+--- .class #id
+
+## MR Example 1 (con't)
+
+Next, we examined the confidence interval for $R^2$ (using the MBESS package). 
+
+From this output, we see that our $R^2$ for the population ranges from .02 and .29. 
+
+```{r verbatim = TRUE}
+ci.R2(R2=.16, df.1 = 3, df.2 = 72, Random.Predictors = FALSE)
+```
+
+--- .class #id
+
+## MR Example 1 (con't)
+
+Now we will obtain the $\beta$-weights/standardized regression weights and semi-partial corelations, which will give us a better indicator of the "best predictor".
+
+```{r verbatim = TRUE}
+apa.reg.table(my.regression1, filename = "myRegressionTable1.doc")
+```
+
+--- .class #id
+
+## MR Example 1 (con't)
+
+$sr^2$ tells us how much of $R^2$ = .16 is uniquely accounted for by each predictor. From our table (ignore the *p* values!), we can see rime awareness is our best predictor of scores on the VCI. 
+
+![](/Users/katiecherry/Dropbox/GROUP PROJECT PSYC*6380/KATIE'S FOLDER/Group Project/RegressionTable.png)
+
+--- .class #id
+
+## MR Example 2
+
+We decided to repeat these steps to examine the scores from the WISC, including the verbal comprehension index (VCI), the visual-spatial index (VSI), the working memory index (WMI), and the processing speed index (PSI) as predictors of self-regulation. 
+
+Again, we have our intercept created from the four predictor variables.
+
+```{r verbatim = TRUE}
+my.regression2 <- lm(SelfRegulation~VCI+VSI+WMI+PSI, data=mydata)
+print(my.regression2)
+```
+
+--- .class #id
+
+## MR Example 2 (con't)
+
+In this output, the $R^2$ value is much higher at .59, which indicates  59% of the variability in self-regulation scores can be explained by VCI, VSI, WMI, and PSI.
+
+```{r verbatim = TRUE}
+summary(my.regression2)
+```
+
+--- .class #id
+
+## MR Example 2 (con't)
+
+Next, we examined the confidence interval for $R^2$.
+
+From this output, we see that our $R^2$ for the population ranges from .42 and .67. 
+
+```{r verbatim = TRUE}
+ci.R2(R2=.59, df.1 = 3, df.2 = 72, Random.Predictors = FALSE)
+```
+
+--- .class #id
+
+## MR Example 2 (con't)
+
+Again, we will obtain the $\beta$-weights/standardized regression weights and semi-partial corelations, which will give us a better indicator of the "best predictor".
+
+```{r verbatim = TRUE}
+
+apa.reg.table(my.regression2, filename = "myRegressionTable2.doc")
+
+```
+
+--- .class #id
+
+## MR Example 2 (con't)
+
+In this table (again, ignore the *p* values!) we can see that all four of our variables are correlated wtih self-regulation, ranging from medium to large effects. However, the table also shows that the PSI and VCI are the two predictors that are uniquely contributing, with .08 and .03, respectively. 
+
+![](/Users/katiecherry/Dropbox/GROUP PROJECT PSYC*6380/KATIE'S FOLDER/Group Project/RegressionTable2.png)
+
+--- .class #id
+
+## SEM in the R environment
+
+>- There are several packages available for SEM in R:
+  + sem
+  + lavaan
+  + lava
+  + systemfit
+  + OpenMX
+>- Today we will be looking at the package **lavaan**
+
+--- .smallcode 
+
+## SEM Example
+
+- Latent variables represented by =~ (e.g., VCI + VSI + WMI + PSI loading onto IQ)
+- Regressions represented by ~ (response variable ~ independent variable)
+- Residual correlations represented by ~~
+  + This is saying intelligence (g) is dependent on Reading Ability, and Student Engagement is dependent on those two. So, you get this dynamic model that is the nature of SEM.
+- Residual correlations represent the notion that these variables are somehow correlated.
+
+```{r, eval=TRUE,echo=FALSE,message=FALSE,cache.comments=TRUE,}
+
+###Load Libraries
+library(lavaan)
+library(qgraph)
+
+#Built in dataset
+my.data<-read.csv("My6380Data.csv")
+
+```
+
+```{r verbatim = TRUE}
+
+model <- '
+  # measurement model
+    ReadingAbility =~ RimeAwareness + PhonologicalAwareness + VerbalSTM
+    IQ =~ VCI + VSI + WMI + PSI
+    StudentEngagement =~ Creativity + Leadership + LoveOfLearning + SelfRegulation
+  # regressions
+    IQ ~ ReadingAbility
+    StudentEngagement ~ ReadingAbility + IQ
+  # residual correlations
+    VCI ~~ Creativity
+    VSI ~~ PSI 
+    VSI~~ Leadership
+    WMI ~~ LoveOfLearning
+    PSI ~~ SelfRegulation
+    Leadership ~~ SelfRegulation
+'
+```
+
+--- .class #id 
+
+## SEM Example (con't)
+- Want models to converge; otherwise data does not fit the model
+- "leftover" DF; completely saturated model, DF = 0
+- Low *p* values are **bad**. $H_0$ = *data fits the model*
+
+```{r verbatim = TRUE, comment = NA, message=FALSE, cache.comments= FALSE, warning = FALSE, error = FALSE}
+
+#fit your SEM
+fit <- sem(model, data = my.data)
+#summarize results
+summary(fit, standardized = TRUE, rsq = T)
+
+```
+
+![](/Users/katiecherry/Dropbox/GROUP PROJECT PSYC*6380/KATIE'S FOLDER/Group Project/Summary1.png)
+
+--- .class #id
+
+## SEM Example (con't)
+
+- Displays correlations, estimates, z-scores, *p*-values for correlations between variables
+- The "rsq = T" command gives us an estimate of $R^2$ for each variable.
+- Here, values are high; so, we have lots of prediction power
+
+```{r verbatim = TRUE, comment = NA, message=FALSE, cache.comments= FALSE, warning = FALSE, eval=FALSE, error = FALSE}
+
+summary(fit, standardized = TRUE, rsq = T)
+
+```
+
+![](/Users/katiecherry/Dropbox/GROUP PROJECT PSYC*6380/KATIE'S FOLDER/Group Project/Summary2.png)
+
+--- .class #id
+
+## SEM Example (con't)
+
+- Plots in lavan using **semPaths** command from **qgraph** package
+- "std" command tells R to standardize the data
+- *Drawback*: unable to plot in APA format
+
+```{r verbatim = TRUE, comment = NA, message=FALSE, cache.comments= FALSE, warning = FALSE, eval=FALSE, error = FALSE}
+
+library(semPlot)
+
+semPaths(fit, "std", edge.label.cex = 0.5, curvePivot = TRUE, layout = "tree")
+
+
+```
+
+--- .class #id
+
+## SEM Example (con't)
+
+![](/Users/katiecherry/Dropbox/GROUP PROJECT PSYC*6380/KATIE'S FOLDER/Group Project/Plot.png)
+
+--- .class #id
+
+## SEM Example (con't)
+
+- **modindices**: allows you to see if you missed a pathway in your dataset
+
+```{r verbatim = TRUE, comment = NA, message=FALSE, cache.comments= FALSE, warning = FALSE, eval=FALSE, error = FALSE}
+modindices(fit)
+```
+
+![](/Users/katiecherry/Dropbox/GROUP PROJECT PSYC*6380/KATIE'S FOLDER/Group Project/mod.png)
+
+- **vartable**: allows you to look at variance in your variables
+  + note: lavan does *not* like big variances; might tell you to scale your variables
+  
+```{r verbatim = TRUE, comment = NA, message=FALSE, cache.comments= FALSE, warning = FALSE, eval=FALSE, error = FALSE}
+vartable(fit)
+```
+
+![](/Users/katiecherry/Dropbox/GROUP PROJECT PSYC*6380/KATIE'S FOLDER/Group Project/var.png)
+
+--- .class #id 
+
+## Advantages
+
+>- **Multiple Regression**
+  + Good for predicting variance in an IV, based on linear combinations of interval/dichotomous variables
+>- **Structural Equation Modeling**
+  + Can examine variables not directly assessed/observed
+  + Can specify/estimate more complicated path models
+  + Less emphasis on null-hypothesis significance testing
+  + Can account for measurement error
+
+![](/Users/katiecherry/Dropbox/GROUP PROJECT PSYC*6380/KATIE'S FOLDER/Group Project/thumbs-up.png)
+
+--- .class #id 
+
+## Disadvantages
+
+>- **Multiple Regression**
+  + Does not consider measurement error
+  + Cannot have multiple "dependent variables"
+  + Unable to deal with theoretically complex models
+  + Problems with interpretations of beta-weights (see Nathans et al., 2012), bivariate hypotheses (see O'Neill et al., 2014) and significance testing
+  
+![](/Users/katiecherry/Dropbox/GROUP PROJECT PSYC*6380/KATIE'S FOLDER/Group Project/thumb-down.png)
+
+
+--- .class #id 
+
+## Disadvantages (con't)
+
+>- **Structural Equation Modeling**
+  + Large burden on researcher to justify structure/design of model.
+  + Assumptions of causality - invalid and unjustified
+  + Considering "equivalent models"
+  + Implications for replication; difficult given number of assumptions and sample size requirements
+  
+![](/Users/katiecherry/Dropbox/GROUP PROJECT PSYC*6380/KATIE'S FOLDER/Group Project/thumb-down.png)
+
+--- .class #id 
+
+## Reflections
+
+>-  *"I found I was more critical as I was thinking about how to conceptually explain MR and SEM. I focused on the words I would need to conceptualize both analytic techniques, and had to be careful not to use loaded language (e.g., significance testing, cause/effect"* - **Lindsay**
+>- *"I learned a lot about the advantages and disadvantages of these techniques, especially around the sheer volume of assumptions for SEM. I also quite liked the lavaan package in R, and think it has quite a lot of flexibility that I might use in the future"* - **Katie**
+>- *"INSERT QUOTE"* - **Kaytlin**
+>- *"INSERT QUOTE"* - **Sandy**
+
+![](/Users/katiecherry/Dropbox/GROUP PROJECT PSYC*6380/KATIE'S FOLDER/Group Project/think.png)
+
+--- .class #id 
+
+<style>
+article li.build {
+  font-size: 14px;
+}
+</style>
+
+
+## References
+
++ Beaujean, A. A. (2014). *Latent variable modeling using R: A step-by-step guide*. New York: Routledge.
+
++ Hox, J. J., & Bechger, T. M. (1998). An introduction to structural equation modeling. *Family Science Review, 11*, 354-373.
+
++ Kline, R. B. (2016). *Principles and practice of structural equation modeling*. New York, NY: The Guilford Press. 
+
++ Nathans, L. L., Frederick, L., & Nimon, K. (2012). Interpreting multiple linear regression: A guidebook of variable importance. *Practical Assessment, Research, & Evaluation, 17*(9), 1-19.
+
++ O'Neill, T. A., McLarnon, M. J. W., Schneier, T. J., & Gardner, R. C. (2014). Current misuses of multiple regression for investigating bivariate hypotheses: An example from the organizational domain. *Behavioural Research, 46*, 798-807.
+
++ Westfall, J., & Yarkoni, T. (2016). Statistically controlling for confounding constructs is harder than you think. *PLOS One, 11*, 1-22.
+
++ Yves Rosseel (2012). lavaan: An R package for structural equation modeling. *Journal of Statistical Software, 48*(2), 1-36. URL http://www.jstatsoft.org/v48/i02/

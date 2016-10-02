@@ -1,0 +1,191 @@
+{\rtf1\ansi\deff0 {\fonttbl {\f0 Times New Roman;}}
+{\pard Table XX \par}
+{\pard  \par}
+{\pard\i Regression results using VCI as the criterion
+\par}
+{\pard  \par}
+{
+\trowd \trgaph100
+\clbrdrt\brdrw15\brdrs
+\clvertalc\cellx1440 
+\clbrdrt\brdrw15\brdrs
+\clvertalc\cellx2844 
+\clbrdrt\brdrw15\brdrs
+\clvertalc\cellx3780 
+\clbrdrt\brdrw15\brdrs
+\clvertalc\cellx4716 
+\clbrdrt\brdrw15\brdrs
+\clvertalc\cellx5652 
+\clbrdrt\brdrw15\brdrs
+\clvertalc\cellx6588 
+\clbrdrt\brdrw15\brdrs
+\clvertalc\cellx8748 
+\pard\sa0\sb0\intbl\qr{ }\cell
+\pard\sa0\sb0\intbl\qc{{\i b}}\cell
+\pard\sa0\sb0\intbl\qc{{\i SE}}\cell
+\pard\sa0\sb0\intbl\qc{{\i beta}}\cell
+\pard\sa0\sb0\intbl\qc{{\i sr\super 2 \nosupersub}}\cell
+\pard\sa0\sb0\intbl\qc{{\i r}}\cell
+\pard\sa0\sb0\intbl\qc{Fit}\cell
+\row
+}
+{
+\trowd \trgaph100
+\clbrdrt\brdrw15\brdrs
+\clvertalc\cellx1440 
+\clbrdrt\brdrw15\brdrs
+\clvertalc\cellx2844 
+\clbrdrt\brdrw15\brdrs
+\clvertalc\cellx3780 
+\clbrdrt\brdrw15\brdrs
+\clvertalc\cellx4716 
+\clbrdrt\brdrw15\brdrs
+\clvertalc\cellx5652 
+\clbrdrt\brdrw15\brdrs
+\clvertalc\cellx6588 
+\clbrdrt\brdrw15\brdrs
+\clvertalc\cellx8748 
+\pard\sa0\sb0\intbl\qr{Model 1}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx561{ }\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx140{ }\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx140{ }\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx140{ }\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx140{ }\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx324{ }\cell
+\row
+}
+{
+\trowd \trgaph100
+\clvertalc\cellx1440 
+\clvertalc\cellx2844 
+\clvertalc\cellx3780 
+\clvertalc\cellx4716 
+\clvertalc\cellx5652 
+\clvertalc\cellx6588 
+\clvertalc\cellx8748 
+\pard\sa0\sb0\intbl\qr{(Intercept)}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx561{-2.66}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx140{ 2.81}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx140{}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx140{}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx140{}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx324{ }\cell
+\row
+}
+{
+\trowd \trgaph100
+\clvertalc\cellx1440 
+\clvertalc\cellx2844 
+\clvertalc\cellx3780 
+\clvertalc\cellx4716 
+\clvertalc\cellx5652 
+\clvertalc\cellx6588 
+\clvertalc\cellx8748 
+\pard\sa0\sb0\intbl\qr{RimeAwareness}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx561{ 1.81*}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx140{ 0.88}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx140{0.50}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx140{.05}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx140{.38**}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx324{ }\cell
+\row
+}
+{
+\trowd \trgaph100
+\clvertalc\cellx1440 
+\clvertalc\cellx2844 
+\clvertalc\cellx3780 
+\clvertalc\cellx4716 
+\clvertalc\cellx5652 
+\clvertalc\cellx6588 
+\clvertalc\cellx8748 
+\pard\sa0\sb0\intbl\qr{PhonologicalAwareness}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx561{ 0.02}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx140{ 0.49}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx140{0.01}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx140{.00}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx140{.32**}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx324{ }\cell
+\row
+}
+{
+\trowd \trgaph100
+\clvertalc\cellx1440 
+\clvertalc\cellx2844 
+\clvertalc\cellx3780 
+\clvertalc\cellx4716 
+\clvertalc\cellx5652 
+\clvertalc\cellx6588 
+\clvertalc\cellx8748 
+\pard\sa0\sb0\intbl\qr{VerbalSTM}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx561{-0.31}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx140{ 0.39}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx140{-0.16}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx140{.01}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx140{.25*}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx324{ }\cell
+\row
+}
+{
+\trowd \trgaph100
+\clvertalc\cellx1440 
+\clvertalc\cellx2844 
+\clvertalc\cellx3780 
+\clvertalc\cellx4716 
+\clvertalc\cellx5652 
+\clvertalc\cellx6588 
+\clvertalc\cellx8748 
+\pard\sa0\sb0\intbl\qr{ }\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx561{ }\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx140{ }\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx140{ }\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx140{ }\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx140{ }\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx324{{\i R\super 2 \nosupersub} = .155}\cell
+\row
+}
+{
+\trowd \trgaph100
+\clvertalc\cellx1440 
+\clvertalc\cellx2844 
+\clvertalc\cellx3780 
+\clvertalc\cellx4716 
+\clvertalc\cellx5652 
+\clvertalc\cellx6588 
+\clvertalc\cellx8748 
+\pard\sa0\sb0\intbl\qr{ }\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx561{ }\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx140{ }\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx140{ }\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx140{ }\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx140{ }\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx324{{\i F}(3, 71) = 4.35}\cell
+\row
+}
+{
+\trowd \trgaph100
+\clbrdrb\brdrw15\brdrs
+\clvertalc\cellx1440 
+\clbrdrb\brdrw15\brdrs
+\clvertalc\cellx2844 
+\clbrdrb\brdrw15\brdrs
+\clvertalc\cellx3780 
+\clbrdrb\brdrw15\brdrs
+\clvertalc\cellx4716 
+\clbrdrb\brdrw15\brdrs
+\clvertalc\cellx5652 
+\clbrdrb\brdrw15\brdrs
+\clvertalc\cellx6588 
+\clbrdrb\brdrw15\brdrs
+\clvertalc\cellx8748 
+\pard\sa0\sb0\intbl\qr{ }\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx561{ }\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx140{ }\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx140{ }\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx140{ }\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx140{ }\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx324{ }\cell
+\row
+}
+{\pard \par}{\pard{\i Note.} * indicates {\i p} < .05; ** indicates {\i p} < .01. A significant {\i b}-weight indicates the beta-weight and semi-partial correlation are also significant. {\i b} represents unstandardized regression weights; {\i SE} represents the standard error of the unstandardized regression weights; {\i beta} indicates the beta-weights or standardized regression weights; {\i sr\super 2\nosupersub} represents the semi-partial correlation squared; {\i r} represents the zero-order correlation.\par}
+}
