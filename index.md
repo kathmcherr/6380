@@ -2,7 +2,6 @@
 title: "PSYC*6380 Group Presentation"
 author: "Lindsay Bryant, Katie Cherry, Kaytlin Constantin, & Sandy Erb"
 highlighter: highlight.js
-output: pdf_document
 incremental: yes
 job: null
 knit: slidify::knit2slides
