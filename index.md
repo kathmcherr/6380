@@ -98,7 +98,7 @@ strong {
 
 --- .class #id
 
-## Assumptions of MR
+## Eight Assumptions for Standard Multiple Regression
 
 >- Continuous dependent variable
 >- Two or more independent variables (continuous [interval/ratio] or categorical [ordinal/nominal])
@@ -111,7 +111,7 @@ strong {
 
 --- .class #id
 
-## Assumptions of MR (con't)
+## Eight Assumptions for Standard Multiple Regression (con't)
 
 >- Homoscedasticity of residuals (equal error variances)
 >- No multicollinearity
@@ -122,7 +122,7 @@ strong {
 
 --- .class #id
 
-## Assumptions of SEM
+## Assumptions in Structural Equation Modeling
 
 >- Temporal precedence
 >- Association or observed covariation between X and Y
@@ -140,7 +140,7 @@ strong {
 >- **Endogeneity**: explicitly measured, not free to vary or covary
 >- **Disturbances**: set of unspecified causes of effect variable - similar to error or residual
 >- Assumption of independence of endogenous variables
-  + no common or ommitted causes: this assumption unrealistic and restrictive for behavioural sciences - thus all ommitted causes are unrelated to each other
+  + No common or ommitted causes: this assumption unrealistic and restrictive for behavioural sciences - thus all ommitted causes are unrelated to each other
 
 ![](/Users/katiecherry/Dropbox/GROUP PROJECT PSYC*6380/KATIE'S FOLDER/Group Project/man-asking-to-other-about-an-educational-book.png)
 
@@ -164,7 +164,6 @@ strong {
 ## Assumptions of Measurement Models
 
 >- 1. **Reflective Models**: most common type analyzed in SEM
-  + SEM analyzes continuous latent variables
   + Factors and measurement errors uncorrelated
   + Factors assumed to be continuous variables that are unidimensional
   + Factors are normally distributed
@@ -185,6 +184,7 @@ strong {
 
 ## Data-Related Assumptions
 # Cardinal assumption: the model is **correctly specified**
+# *Statistical Assumptions of ML estimation*:
 
 >- Observations independent; variables unstandardized
 >- No missing values
@@ -200,7 +200,7 @@ strong {
 >- Linear bivariate scatterplots
 >- Homoscedastic distribution of residual
 >- No measurement error in exogenous variables (unrealistic)
->- Exogeneity Assumptions:
+>- Exogeneity Assumptions: for situations where all variables measured at once:
   + Distribution of Endogenous and Exogenous continuous variables is  multivariate normal
   + All biviariate relations  are linear
   + Homoscedastic distributions of regression residuals
@@ -224,9 +224,9 @@ strong {
 
 
 
-    ```{r verbatimchunk}
-    my.regression1 <- lm(VCI~RimeAwareness+PhonologicalAwareness+VerbalSTM, data=mydata)
-    ```
+```r
+my.regression1 <- lm(VCI~RimeAwareness+PhonologicalAwareness+VerbalSTM, data=mydata)
+```
 
 --- .class #id
 
@@ -235,9 +235,9 @@ strong {
 This output shows us how we combined rime awareness, phonological awareness and verbal short term memory and a constant to create $\hat{Y}$ (reported as the intercept in the output). Basically we are looking at how well, overall, can these three variables predict scores on the verbal comprehension index. 
 
 
-    ```{r verbatim = TRUE}
-    print(my.regression1)
-    ```
+```r
+print(my.regression1)
+```
 
 ```
 ## 
@@ -259,9 +259,9 @@ This output shows us how we combined rime awareness, phonological awareness and 
 The $R^2$ value (ranges 0 to 1) indicates how well we predicted VCI based on our predictors. B-weights are presented under the Estimate columns. Here, $R^2$ = .16, indicating  16% of the variability in VCI scores can be explained by rime awareness, phonological awareness and verbal short term memory.
 
 
-    ```{r verbatim = TRUE}
-    summary(my.regression1)
-    ```
+```r
+summary(my.regression1)
+```
 
 ```
 ## 
@@ -296,9 +296,9 @@ Next, we examined the confidence interval for $R^2$ (using the MBESS package).
 From this output, we see that our $R^2$ for the population ranges from .02 and .29. 
 
 
-    ```{r verbatim = TRUE}
-    ci.R2(R2=.16, df.1 = 3, df.2 = 72, Random.Predictors = FALSE)
-    ```
+```r
+ci.R2(R2=.16, df.1 = 3, df.2 = 72, Random.Predictors = FALSE)
+```
 
 ```
 ## $Lower.Conf.Limit.R2
@@ -321,9 +321,9 @@ From this output, we see that our $R^2$ for the population ranges from .02 and .
 Now we will obtain the $\beta$-weights/standardized regression weights and semi-partial corelations, which will give us a better indicator of the "best predictor".
 
 
-    ```{r verbatim = TRUE}
-    apa.reg.table(my.regression1, filename = "myRegressionTable1.doc")
-    ```
+```r
+apa.reg.table(my.regression1, filename = "myRegressionTable1.doc")
+```
 
 ```
 ## 
@@ -366,10 +366,10 @@ We decided to repeat these steps to examine the scores from the WISC, including 
 Again, we have our intercept created from the four predictor variables.
 
 
-    ```{r verbatim = TRUE}
-    my.regression2 <- lm(SelfRegulation~VCI+VSI+WMI+PSI, data=mydata)
-    print(my.regression2)
-    ```
+```r
+my.regression2 <- lm(SelfRegulation~VCI+VSI+WMI+PSI, data=mydata)
+print(my.regression2)
+```
 
 ```
 ## 
@@ -388,9 +388,9 @@ Again, we have our intercept created from the four predictor variables.
 In this output, the $R^2$ value is much higher at .59, which indicates  59% of the variability in self-regulation scores can be explained by VCI, VSI, WMI, and PSI.
 
 
-    ```{r verbatim = TRUE}
-    summary(my.regression2)
-    ```
+```r
+summary(my.regression2)
+```
 
 ```
 ## 
@@ -425,9 +425,9 @@ Next, we examined the confidence interval for $R^2$.
 From this output, we see that our $R^2$ for the population ranges from .42 and .67. 
 
 
-    ```{r verbatim = TRUE}
-    ci.R2(R2=.59, df.1 = 3, df.2 = 72, Random.Predictors = FALSE)
-    ```
+```r
+ci.R2(R2=.59, df.1 = 3, df.2 = 72, Random.Predictors = FALSE)
+```
 
 ```
 ## $Lower.Conf.Limit.R2
@@ -450,9 +450,9 @@ From this output, we see that our $R^2$ for the population ranges from .42 and .
 Again, we will obtain the $\beta$-weights/standardized regression weights and semi-partial corelations, which will give us a better indicator of the "best predictor".
 
 
-    ```{r verbatim = TRUE}
-    apa.reg.table(my.regression2, filename = "myRegressionTable2.doc")
-    ```
+```r
+apa.reg.table(my.regression2, filename = "myRegressionTable2.doc")
+```
 
 ```
 ## 
@@ -512,24 +512,24 @@ In this table (again, ignore the *p* values!) we can see that all four of our va
 
 
 
-    ```{r verbatim = TRUE}
-    model <- '
-      # measurement model
-        ReadingAbility =~ RimeAwareness + PhonologicalAwareness + VerbalSTM
-        IQ =~ VCI + VSI + WMI + PSI
-        StudentEngagement =~ Creativity + Leadership + LoveOfLearning + SelfRegulation
-      # regressions
-        IQ ~ ReadingAbility
-        StudentEngagement ~ ReadingAbility + IQ
-      # residual correlations
-        VCI ~~ Creativity
-        VSI ~~ PSI 
-        VSI~~ Leadership
-        WMI ~~ LoveOfLearning
-        PSI ~~ SelfRegulation
-        Leadership ~~ SelfRegulation
-    '
-    ```
+```r
+model <- '
+  # measurement model
+    ReadingAbility =~ RimeAwareness + PhonologicalAwareness + VerbalSTM
+    IQ =~ VCI + VSI + WMI + PSI
+    StudentEngagement =~ Creativity + Leadership + LoveOfLearning + SelfRegulation
+  # regressions
+    IQ ~ ReadingAbility
+    StudentEngagement ~ ReadingAbility + IQ
+  # residual correlations
+    VCI ~~ Creativity
+    VSI ~~ PSI 
+    VSI~~ Leadership
+    WMI ~~ LoveOfLearning
+    PSI ~~ SelfRegulation
+    Leadership ~~ SelfRegulation
+'
+```
 
 --- .class #id 
 
@@ -539,120 +539,16 @@ In this table (again, ignore the *p* values!) we can see that all four of our va
 - Low *p* values are **bad**. $H_0$ = *data fits the model*
 
 
-    ```{r verbatim = TRUE, comment = NA, message=FALSE, cache.comments= FALSE, warning = FALSE, error = FALSE}
-    #fit your SEM
-    fit <- sem(model, data = my.data)
-    #summarize results
-    summary(fit, standardized = TRUE, rsq = T)
-    ```
+```r
+#fit your SEM
+fit <- sem(model, data = my.data)
+#summarize results
+summary(fit, standardized = TRUE, rsq = T)
+```
 
 ```
-lavaan (0.5-21) converged normally after  68 iterations
-
-  Number of observations                            75
-
-  Estimator                                         ML
-  Minimum Function Test Statistic               38.125
-  Degrees of freedom                                35
-  P-value (Chi-square)                           0.329
-
-Parameter Estimates:
-
-  Information                                 Expected
-  Standard Errors                             Standard
-
-Latent Variables:
-                       Estimate  Std.Err  z-value  P(>|z|)   Std.lv
-  ReadingAbility =~                                                
-    RimeAwareness         1.000                               0.670
-    PhonlgclAwrnss        2.180    0.139   15.742    0.000    1.460
-    VerbalSTM             1.819    0.152   11.967    0.000    1.218
-  IQ =~                                                            
-    VCI                   1.000                               2.223
-    VSI                   1.257    0.182    6.889    0.000    2.794
-    WMI                   1.058    0.151    6.987    0.000    2.351
-    PSI                   1.265    0.145    8.722    0.000    2.812
-  StudentEngagement =~                                             
-    Creativity            1.000                               2.103
-    Leadership            1.186    0.169    7.024    0.000    2.493
-    LoveOfLearning        1.280    0.160    8.002    0.000    2.691
-    SelfRegulation        1.266    0.158    8.007    0.000    2.662
-  Std.all
-         
-    0.920
-    0.973
-    0.872
-         
-    0.850
-    0.717
-    0.722
-    0.846
-         
-    0.808
-    0.746
-    0.824
-    0.828
-
-Regressions:
-                      Estimate  Std.Err  z-value  P(>|z|)   Std.lv
-  IQ ~                                                            
-    ReadingAbility       1.483    0.399    3.715    0.000    0.447
-  StudentEngagement ~                                             
-    ReadingAbility       0.572    0.221    2.586    0.010    0.182
-    IQ                   0.837    0.098    8.514    0.000    0.885
-  Std.all
-         
-    0.447
-         
-    0.182
-    0.885
-
-Covariances:
-                   Estimate  Std.Err  z-value  P(>|z|)   Std.lv  Std.all
- .VCI ~~                                                                
-   .Creativity        0.624    0.358    1.741    0.082    0.624    0.296
- .VSI ~~                                                                
-   .PSI               1.313    0.702    1.871    0.061    1.313    0.273
-   .Leadership        2.153    0.734    2.934    0.003    2.153    0.356
- .WMI ~~                                                                
-   .LoveOfLearning    0.795    0.608    1.308    0.191    0.795    0.191
- .PSI ~~                                                                
-   .SelfRegulation    0.348    0.442    0.787    0.431    0.348    0.109
- .Leadership ~~                                                         
-   .SelfRegulation    1.356    0.568    2.386    0.017    1.356    0.338
-
-Variances:
-                   Estimate  Std.Err  z-value  P(>|z|)   Std.lv  Std.all
-   .RimeAwareness     0.082    0.019    4.184    0.000    0.082    0.154
-   .PhonlgclAwrnss    0.120    0.070    1.718    0.086    0.120    0.053
-   .VerbalSTM         0.467    0.090    5.177    0.000    0.467    0.239
-   .VCI               1.891    0.444    4.256    0.000    1.891    0.277
-   .VSI               7.373    1.374    5.366    0.000    7.373    0.486
-   .WMI               5.067    0.952    5.324    0.000    5.067    0.478
-   .PSI               3.148    0.739    4.261    0.000    3.148    0.285
-   .Creativity        2.351    0.480    4.895    0.000    2.351    0.347
-   .Leadership        4.954    0.914    5.419    0.000    4.954    0.443
-   .LoveOfLearning    3.431    0.713    4.814    0.000    3.431    0.322
-   .SelfRegulation    3.254    0.695    4.685    0.000    3.254    0.315
-    ReadingAbility    0.448    0.087    5.173    0.000    1.000    1.000
-   .IQ                3.956    0.921    4.295    0.000    0.800    0.800
-   .StudentEnggmnt    0.172    0.215    0.803    0.422    0.039    0.039
-
-R-Square:
-                   Estimate
-    RimeAwareness     0.846
-    PhonlgclAwrnss    0.947
-    VerbalSTM         0.761
-    VCI               0.723
-    VSI               0.514
-    WMI               0.522
-    PSI               0.715
-    Creativity        0.653
-    Leadership        0.557
-    LoveOfLearning    0.678
-    SelfRegulation    0.685
-    IQ                0.200
-    StudentEnggmnt    0.961
+Length  Class   Mode 
+     1 lavaan     S4 
 ```
 
 ![](/Users/katiecherry/Dropbox/GROUP PROJECT PSYC*6380/KATIE'S FOLDER/Group Project/Summary1.png)
@@ -666,9 +562,9 @@ R-Square:
 - Here, values are high; so, we have lots of prediction power
 
 
-    ```{r verbatim = TRUE, comment = NA, message=FALSE, cache.comments= FALSE, warning = FALSE, eval=FALSE, error = FALSE}
-    summary(fit, standardized = TRUE, rsq = T)
-    ```
+```r
+summary(fit, standardized = TRUE, rsq = T)
+```
 
 ![](/Users/katiecherry/Dropbox/GROUP PROJECT PSYC*6380/KATIE'S FOLDER/Group Project/Summary2.png)
 
@@ -681,11 +577,10 @@ R-Square:
 - *Drawback*: unable to plot in APA format
 
 
-    ```{r verbatim = TRUE, comment = NA, message=FALSE, cache.comments= FALSE, warning = FALSE, eval=FALSE, error = FALSE}
-    library(semPlot)
-    
-    semPaths(fit, "std", edge.label.cex = 0.5, curvePivot = TRUE, layout = "tree")
-    ```
+```r
+library(semPlot)
+semPaths(fit, "std", edge.label.cex = 0.5, curvePivot = TRUE, layout = "tree")
+```
 
 --- .class #id
 
@@ -700,9 +595,9 @@ R-Square:
 - **modindices**: allows you to see if you missed a pathway in your dataset
 
 
-    ```{r verbatim = TRUE, comment = NA, message=FALSE, cache.comments= FALSE, warning = FALSE, eval=FALSE, error = FALSE}
-    modindices(fit)
-    ```
+```r
+modindices(fit)
+```
 
 ![](/Users/katiecherry/Dropbox/GROUP PROJECT PSYC*6380/KATIE'S FOLDER/Group Project/mod.png)
 
@@ -710,9 +605,9 @@ R-Square:
   + note: lavan does *not* like big variances; might tell you to scale your variables
   
 
-    ```{r verbatim = TRUE, comment = NA, message=FALSE, cache.comments= FALSE, warning = FALSE, eval=FALSE, error = FALSE}
-    vartable(fit)
-    ```
+```r
+vartable(fit)
+```
 
 ![](/Users/katiecherry/Dropbox/GROUP PROJECT PSYC*6380/KATIE'S FOLDER/Group Project/var.png)
 

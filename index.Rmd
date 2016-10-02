@@ -12,7 +12,7 @@ framework: io2012
 widgets: mathjax
 github:
   user: kathmcherr
-  repo: TESTING
+  repo: 6380
 ---
 
 <style>
@@ -98,7 +98,7 @@ strong {
 
 --- .class #id
 
-## Assumptions of MR
+## Eight Assumptions for Standard Multiple Regression
 
 >- Continuous dependent variable
 >- Two or more independent variables (continuous [interval/ratio] or categorical [ordinal/nominal])
@@ -111,7 +111,7 @@ strong {
 
 --- .class #id
 
-## Assumptions of MR (con't)
+## Eight Assumptions for Standard Multiple Regression (con't)
 
 >- Homoscedasticity of residuals (equal error variances)
 >- No multicollinearity
@@ -122,7 +122,7 @@ strong {
 
 --- .class #id
 
-## Assumptions of SEM
+## Assumptions in Structural Equation Modeling
 
 >- Temporal precedence
 >- Association or observed covariation between X and Y
@@ -140,7 +140,7 @@ strong {
 >- **Endogeneity**: explicitly measured, not free to vary or covary
 >- **Disturbances**: set of unspecified causes of effect variable - similar to error or residual
 >- Assumption of independence of endogenous variables
-  + no common or ommitted causes: this assumption unrealistic and restrictive for behavioural sciences - thus all ommitted causes are unrelated to each other
+  + No common or ommitted causes: this assumption unrealistic and restrictive for behavioural sciences - thus all ommitted causes are unrelated to each other
 
 ![](/Users/katiecherry/Dropbox/GROUP PROJECT PSYC*6380/KATIE'S FOLDER/Group Project/man-asking-to-other-about-an-educational-book.png)
 
@@ -164,7 +164,6 @@ strong {
 ## Assumptions of Measurement Models
 
 >- 1. **Reflective Models**: most common type analyzed in SEM
-  + SEM analyzes continuous latent variables
   + Factors and measurement errors uncorrelated
   + Factors assumed to be continuous variables that are unidimensional
   + Factors are normally distributed
@@ -185,6 +184,7 @@ strong {
 
 ## Data-Related Assumptions
 # Cardinal assumption: the model is **correctly specified**
+# *Statistical Assumptions of ML estimation*:
 
 >- Observations independent; variables unstandardized
 >- No missing values
@@ -200,7 +200,7 @@ strong {
 >- Linear bivariate scatterplots
 >- Homoscedastic distribution of residual
 >- No measurement error in exogenous variables (unrealistic)
->- Exogeneity Assumptions:
+>- Exogeneity Assumptions: for situations where all variables measured at once:
   + Distribution of Endogenous and Exogenous continuous variables is  multivariate normal
   + All biviariate relations  are linear
   + Homoscedastic distributions of regression residuals

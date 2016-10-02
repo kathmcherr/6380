@@ -191,7 +191,7 @@ strong {
 
 <slide class="class" id="id" style="background:;">
   <hgroup>
-    <h2>Assumptions of MR</h2>
+    <h2>Eight Assumptions for Standard Multiple Regression</h2>
   </hgroup>
   <article data-timings="">
     <ul class = "build incremental">
@@ -214,7 +214,7 @@ strong {
 
 <slide class="class" id="id" style="background:;">
   <hgroup>
-    <h2>Assumptions of MR (con&#39;t)</h2>
+    <h2>Eight Assumptions for Standard Multiple Regression (con&#39;t)</h2>
   </hgroup>
   <article data-timings="">
     <ul class = "build incremental">
@@ -232,7 +232,7 @@ strong {
 
 <slide class="class" id="id" style="background:;">
   <hgroup>
-    <h2>Assumptions of SEM</h2>
+    <h2>Assumptions in Structural Equation Modeling</h2>
   </hgroup>
   <article data-timings="">
     <ul class = "build incremental">
@@ -261,7 +261,7 @@ strong {
 <li>Assumption of independence of endogenous variables
 
 <ul>
-<li>no common or ommitted causes: this assumption unrealistic and restrictive for behavioural sciences - thus all ommitted causes are unrelated to each other</li>
+<li>No common or ommitted causes: this assumption unrealistic and restrictive for behavioural sciences - thus all ommitted causes are unrelated to each other</li>
 </ul></li>
 </ul>
 
@@ -308,7 +308,6 @@ strong {
 <li>1. <strong>Reflective Models</strong>: most common type analyzed in SEM
 
 <ul>
-<li>SEM analyzes continuous latent variables</li>
 <li>Factors and measurement errors uncorrelated</li>
 <li>Factors assumed to be continuous variables that are unidimensional</li>
 <li>Factors are normally distributed</li>
@@ -351,6 +350,8 @@ strong {
   <article data-timings="">
     <h1>Cardinal assumption: the model is <strong>correctly specified</strong></h1>
 
+<h1><em>Statistical Assumptions of ML estimation</em>:</h1>
+
 <ul class = "build incremental">
 <li>Observations independent; variables unstandardized</li>
 <li>No missing values</li>
@@ -376,7 +377,7 @@ strong {
 <li>Linear bivariate scatterplots</li>
 <li>Homoscedastic distribution of residual</li>
 <li>No measurement error in exogenous variables (unrealistic)</li>
-<li>Exogeneity Assumptions:
+<li>Exogeneity Assumptions: for situations where all variables measured at once:
 
 <ul>
 <li>Distribution of Endogenous and Exogenous continuous variables is  multivariate normal</li>
@@ -408,11 +409,11 @@ strong {
     <ul>
 <li>Example: examining the relation between rime awareness, phonological awareness, and verbal short-term memory as predictors of the WISC-V&#39;s Verbal Comprehension Index. </li>
 <li>Using a forced entry MR method (no predictions)</li>
-<li><p>Need to combine these into a new variable</p>
-
-<pre><code class="r verbatimchunk">my.regression1 &lt;- lm(VCI~RimeAwareness+PhonologicalAwareness+VerbalSTM, data=mydata)
-</code></pre></li>
+<li>Need to combine these into a new variable</li>
 </ul>
+
+<pre><code class="r">my.regression1 &lt;- lm(VCI~RimeAwareness+PhonologicalAwareness+VerbalSTM, data=mydata)
+</code></pre>
 
   </article>
   <!-- Presenter Notes -->
@@ -425,9 +426,7 @@ strong {
   <article data-timings="">
     <p>This output shows us how we combined rime awareness, phonological awareness and verbal short term memory and a constant to create \(\hat{Y}\) (reported as the intercept in the output). Basically we are looking at how well, overall, can these three variables predict scores on the verbal comprehension index. </p>
 
-<pre><code>```{r verbatim = TRUE}
-print(my.regression1)
-```
+<pre><code class="r">print(my.regression1)
 </code></pre>
 
 <pre><code>## 
@@ -453,9 +452,7 @@ print(my.regression1)
   <article data-timings="">
     <p>The \(R^2\) value (ranges 0 to 1) indicates how well we predicted VCI based on our predictors. B-weights are presented under the Estimate columns. Here, \(R^2\) = .16, indicating  16% of the variability in VCI scores can be explained by rime awareness, phonological awareness and verbal short term memory.</p>
 
-<pre><code>```{r verbatim = TRUE}
-summary(my.regression1)
-```
+<pre><code class="r">summary(my.regression1)
 </code></pre>
 
 <pre><code>## 
@@ -494,9 +491,7 @@ summary(my.regression1)
 
 <p>From this output, we see that our \(R^2\) for the population ranges from .02 and .29. </p>
 
-<pre><code>```{r verbatim = TRUE}
-ci.R2(R2=.16, df.1 = 3, df.2 = 72, Random.Predictors = FALSE)
-```
+<pre><code class="r">ci.R2(R2=.16, df.1 = 3, df.2 = 72, Random.Predictors = FALSE)
 </code></pre>
 
 <pre><code>## $Lower.Conf.Limit.R2
@@ -523,9 +518,7 @@ ci.R2(R2=.16, df.1 = 3, df.2 = 72, Random.Predictors = FALSE)
   <article data-timings="">
     <p>Now we will obtain the \(\beta\)-weights/standardized regression weights and semi-partial corelations, which will give us a better indicator of the &quot;best predictor&quot;.</p>
 
-<pre><code>```{r verbatim = TRUE}
-apa.reg.table(my.regression1, filename = &quot;myRegressionTable1.doc&quot;)
-```
+<pre><code class="r">apa.reg.table(my.regression1, filename = &quot;myRegressionTable1.doc&quot;)
 </code></pre>
 
 <pre><code>## 
@@ -577,10 +570,8 @@ apa.reg.table(my.regression1, filename = &quot;myRegressionTable1.doc&quot;)
 
 <p>Again, we have our intercept created from the four predictor variables.</p>
 
-<pre><code>```{r verbatim = TRUE}
-my.regression2 &lt;- lm(SelfRegulation~VCI+VSI+WMI+PSI, data=mydata)
+<pre><code class="r">my.regression2 &lt;- lm(SelfRegulation~VCI+VSI+WMI+PSI, data=mydata)
 print(my.regression2)
-```
 </code></pre>
 
 <pre><code>## 
@@ -603,9 +594,7 @@ print(my.regression2)
   <article data-timings="">
     <p>In this output, the \(R^2\) value is much higher at .59, which indicates  59% of the variability in self-regulation scores can be explained by VCI, VSI, WMI, and PSI.</p>
 
-<pre><code>```{r verbatim = TRUE}
-summary(my.regression2)
-```
+<pre><code class="r">summary(my.regression2)
 </code></pre>
 
 <pre><code>## 
@@ -644,9 +633,7 @@ summary(my.regression2)
 
 <p>From this output, we see that our \(R^2\) for the population ranges from .42 and .67. </p>
 
-<pre><code>```{r verbatim = TRUE}
-ci.R2(R2=.59, df.1 = 3, df.2 = 72, Random.Predictors = FALSE)
-```
+<pre><code class="r">ci.R2(R2=.59, df.1 = 3, df.2 = 72, Random.Predictors = FALSE)
 </code></pre>
 
 <pre><code>## $Lower.Conf.Limit.R2
@@ -673,9 +660,7 @@ ci.R2(R2=.59, df.1 = 3, df.2 = 72, Random.Predictors = FALSE)
   <article data-timings="">
     <p>Again, we will obtain the \(\beta\)-weights/standardized regression weights and semi-partial corelations, which will give us a better indicator of the &quot;best predictor&quot;.</p>
 
-<pre><code>```{r verbatim = TRUE}
-apa.reg.table(my.regression2, filename = &quot;myRegressionTable2.doc&quot;)
-```
+<pre><code class="r">apa.reg.table(my.regression2, filename = &quot;myRegressionTable2.doc&quot;)
 </code></pre>
 
 <pre><code>## 
@@ -754,9 +739,10 @@ apa.reg.table(my.regression2, filename = &quot;myRegressionTable2.doc&quot;)
 <ul>
 <li>This is saying intelligence (g) is dependent on Reading Ability, and Student Engagement is dependent on those two. So, you get this dynamic model that is the nature of SEM.</li>
 </ul></li>
-<li><p>Residual correlations represent the notion that these variables are somehow correlated.</p>
+<li>Residual correlations represent the notion that these variables are somehow correlated.</li>
+</ul>
 
-<pre><code class="r verbatim = TRUE">model &lt;- &#39;
+<pre><code class="r">model &lt;- &#39;
   # measurement model
     ReadingAbility =~ RimeAwareness + PhonologicalAwareness + VerbalSTM
     IQ =~ VCI + VSI + WMI + PSI
@@ -772,8 +758,7 @@ apa.reg.table(my.regression2, filename = &quot;myRegressionTable2.doc&quot;)
     PSI ~~ SelfRegulation
     Leadership ~~ SelfRegulation
 &#39;
-</code></pre></li>
-</ul>
+</code></pre>
 
   </article>
   <!-- Presenter Notes -->
@@ -787,121 +772,17 @@ apa.reg.table(my.regression2, filename = &quot;myRegressionTable2.doc&quot;)
     <ul>
 <li>Want models to converge; otherwise data does not fit the model</li>
 <li>&quot;leftover&quot; DF; completely saturated model, DF = 0</li>
-<li><p>Low <em>p</em> values are <strong>bad</strong>. \(H_0\) = <em>data fits the model</em></p>
+<li>Low <em>p</em> values are <strong>bad</strong>. \(H_0\) = <em>data fits the model</em></li>
+</ul>
 
-<pre><code class="r verbatim = TRUE, comment = NA, message=FALSE, cache.comments= FALSE, warning = FALSE, error = FALSE">#fit your SEM
+<pre><code class="r">#fit your SEM
 fit &lt;- sem(model, data = my.data)
 #summarize results
 summary(fit, standardized = TRUE, rsq = T)
-</code></pre></li>
-</ul>
+</code></pre>
 
-<pre><code>lavaan (0.5-21) converged normally after  68 iterations
-
-  Number of observations                            75
-
-  Estimator                                         ML
-  Minimum Function Test Statistic               38.125
-  Degrees of freedom                                35
-  P-value (Chi-square)                           0.329
-
-Parameter Estimates:
-
-  Information                                 Expected
-  Standard Errors                             Standard
-
-Latent Variables:
-                       Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv
-  ReadingAbility =~                                                
-    RimeAwareness         1.000                               0.670
-    PhonlgclAwrnss        2.180    0.139   15.742    0.000    1.460
-    VerbalSTM             1.819    0.152   11.967    0.000    1.218
-  IQ =~                                                            
-    VCI                   1.000                               2.223
-    VSI                   1.257    0.182    6.889    0.000    2.794
-    WMI                   1.058    0.151    6.987    0.000    2.351
-    PSI                   1.265    0.145    8.722    0.000    2.812
-  StudentEngagement =~                                             
-    Creativity            1.000                               2.103
-    Leadership            1.186    0.169    7.024    0.000    2.493
-    LoveOfLearning        1.280    0.160    8.002    0.000    2.691
-    SelfRegulation        1.266    0.158    8.007    0.000    2.662
-  Std.all
-
-    0.920
-    0.973
-    0.872
-
-    0.850
-    0.717
-    0.722
-    0.846
-
-    0.808
-    0.746
-    0.824
-    0.828
-
-Regressions:
-                      Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv
-  IQ ~                                                            
-    ReadingAbility       1.483    0.399    3.715    0.000    0.447
-  StudentEngagement ~                                             
-    ReadingAbility       0.572    0.221    2.586    0.010    0.182
-    IQ                   0.837    0.098    8.514    0.000    0.885
-  Std.all
-
-    0.447
-
-    0.182
-    0.885
-
-Covariances:
-                   Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all
- .VCI ~~                                                                
-   .Creativity        0.624    0.358    1.741    0.082    0.624    0.296
- .VSI ~~                                                                
-   .PSI               1.313    0.702    1.871    0.061    1.313    0.273
-   .Leadership        2.153    0.734    2.934    0.003    2.153    0.356
- .WMI ~~                                                                
-   .LoveOfLearning    0.795    0.608    1.308    0.191    0.795    0.191
- .PSI ~~                                                                
-   .SelfRegulation    0.348    0.442    0.787    0.431    0.348    0.109
- .Leadership ~~                                                         
-   .SelfRegulation    1.356    0.568    2.386    0.017    1.356    0.338
-
-Variances:
-                   Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all
-   .RimeAwareness     0.082    0.019    4.184    0.000    0.082    0.154
-   .PhonlgclAwrnss    0.120    0.070    1.718    0.086    0.120    0.053
-   .VerbalSTM         0.467    0.090    5.177    0.000    0.467    0.239
-   .VCI               1.891    0.444    4.256    0.000    1.891    0.277
-   .VSI               7.373    1.374    5.366    0.000    7.373    0.486
-   .WMI               5.067    0.952    5.324    0.000    5.067    0.478
-   .PSI               3.148    0.739    4.261    0.000    3.148    0.285
-   .Creativity        2.351    0.480    4.895    0.000    2.351    0.347
-   .Leadership        4.954    0.914    5.419    0.000    4.954    0.443
-   .LoveOfLearning    3.431    0.713    4.814    0.000    3.431    0.322
-   .SelfRegulation    3.254    0.695    4.685    0.000    3.254    0.315
-    ReadingAbility    0.448    0.087    5.173    0.000    1.000    1.000
-   .IQ                3.956    0.921    4.295    0.000    0.800    0.800
-   .StudentEnggmnt    0.172    0.215    0.803    0.422    0.039    0.039
-
-R-Square:
-                   Estimate
-    RimeAwareness     0.846
-    PhonlgclAwrnss    0.947
-    VerbalSTM         0.761
-    VCI               0.723
-    VSI               0.514
-    WMI               0.522
-    PSI               0.715
-    Creativity        0.653
-    Leadership        0.557
-    LoveOfLearning    0.678
-    SelfRegulation    0.685
-    IQ                0.200
-    StudentEnggmnt    0.961
+<pre><code>Length  Class   Mode 
+     1 lavaan     S4 
 </code></pre>
 
 <p><img src="/Users/katiecherry/Dropbox/GROUP%20PROJECT%20PSYC*6380/KATIE&#x27;S%20FOLDER/Group%20Project/Summary1.png" alt=""></p>
@@ -918,11 +799,11 @@ R-Square:
     <ul>
 <li>Displays correlations, estimates, z-scores, <em>p</em>-values for correlations between variables</li>
 <li>The &quot;rsq = T&quot; command gives us an estimate of \(R^2\) for each variable.</li>
-<li><p>Here, values are high; so, we have lots of prediction power</p>
-
-<pre><code class="r verbatim = TRUE, comment = NA, message=FALSE, cache.comments= FALSE, warning = FALSE, eval=FALSE, error = FALSE">summary(fit, standardized = TRUE, rsq = T)
-</code></pre></li>
+<li>Here, values are high; so, we have lots of prediction power</li>
 </ul>
+
+<pre><code class="r">summary(fit, standardized = TRUE, rsq = T)
+</code></pre>
 
 <p><img src="/Users/katiecherry/Dropbox/GROUP%20PROJECT%20PSYC*6380/KATIE&#x27;S%20FOLDER/Group%20Project/Summary2.png" alt=""></p>
 
@@ -938,13 +819,12 @@ R-Square:
     <ul>
 <li>Plots in lavan using <strong>semPaths</strong> command from <strong>qgraph</strong> package</li>
 <li>&quot;std&quot; command tells R to standardize the data</li>
-<li><p><em>Drawback</em>: unable to plot in APA format</p>
-
-<pre><code class="r verbatim = TRUE, comment = NA, message=FALSE, cache.comments= FALSE, warning = FALSE, eval=FALSE, error = FALSE">library(semPlot)
-
-semPaths(fit, &quot;std&quot;, edge.label.cex = 0.5, curvePivot = TRUE, layout = &quot;tree&quot;)
-</code></pre></li>
+<li><em>Drawback</em>: unable to plot in APA format</li>
 </ul>
+
+<pre><code class="r">library(semPlot)
+semPaths(fit, &quot;std&quot;, edge.label.cex = 0.5, curvePivot = TRUE, layout = &quot;tree&quot;)
+</code></pre>
 
   </article>
   <!-- Presenter Notes -->
@@ -967,24 +847,24 @@ semPaths(fit, &quot;std&quot;, edge.label.cex = 0.5, curvePivot = TRUE, layout =
   </hgroup>
   <article data-timings="">
     <ul>
-<li><p><strong>modindices</strong>: allows you to see if you missed a pathway in your dataset</p>
-
-<pre><code class="r verbatim = TRUE, comment = NA, message=FALSE, cache.comments= FALSE, warning = FALSE, eval=FALSE, error = FALSE">modindices(fit)
-</code></pre></li>
+<li><strong>modindices</strong>: allows you to see if you missed a pathway in your dataset</li>
 </ul>
+
+<pre><code class="r">modindices(fit)
+</code></pre>
 
 <p><img src="/Users/katiecherry/Dropbox/GROUP%20PROJECT%20PSYC*6380/KATIE&#x27;S%20FOLDER/Group%20Project/mod.png" alt=""></p>
 
 <ul>
-<li><p><strong>vartable</strong>: allows you to look at variance in your variables</p>
+<li><strong>vartable</strong>: allows you to look at variance in your variables
 
 <ul>
 <li>note: lavan does <em>not</em> like big variances; might tell you to scale your variables</li>
+</ul></li>
 </ul>
 
-<pre><code class="r verbatim = TRUE, comment = NA, message=FALSE, cache.comments= FALSE, warning = FALSE, eval=FALSE, error = FALSE">vartable(fit)
-</code></pre></li>
-</ul>
+<pre><code class="r">vartable(fit)
+</code></pre>
 
 <p><img src="/Users/katiecherry/Dropbox/GROUP%20PROJECT%20PSYC*6380/KATIE&#x27;S%20FOLDER/Group%20Project/var.png" alt=""></p>
 
@@ -1147,19 +1027,19 @@ article li.build {
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=7 title='Assumptions of MR'>
+        data-slide=7 title='Eight Assumptions for Standard Multiple Regression'>
          7
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=8 title='Assumptions of MR (con&#39;t)'>
+        data-slide=8 title='Eight Assumptions for Standard Multiple Regression (con&#39;t)'>
          8
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=9 title='Assumptions of SEM'>
+        data-slide=9 title='Assumptions in Structural Equation Modeling'>
          9
       </a>
     </li>
